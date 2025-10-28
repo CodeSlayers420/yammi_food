@@ -4,11 +4,17 @@ import 'package:fooddeliveryapp/models/food.dart';
 class MyTabBar extends StatelessWidget {
   final TabController tabController;
 
-  const MyTabBar({super.key, required this.tabController});
+  const MyTabBar({
+    super.key,
+    required this.tabController,
+  });
 
   List<Tab> _buildCategoryTabs() {
     return FoodCategory.values.map((category) {
-      return Tab(icon: Icon(category.icon, size: 20), text: category.label);
+      return Tab(
+        icon: Icon(category.icon, size: 20),
+        text: category.label,
+      );
     }).toList();
   }
 
@@ -20,9 +26,7 @@ class MyTabBar extends StatelessWidget {
       tabs: _buildCategoryTabs(),
       indicatorColor: Theme.of(context).colorScheme.primary,
       labelColor: Theme.of(context).colorScheme.primary,
-      unselectedLabelColor: Theme.of(
-        context,
-      ).colorScheme.onSurface.withOpacity(0.5),
+      unselectedLabelColor: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
     );
   }
 }
