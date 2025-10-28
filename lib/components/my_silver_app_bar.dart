@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:fooddeliveryapp/models/resturant.dart';
 import 'package:fooddeliveryapp/pages/cart_pages.dart';
-import 'package:provider/provider.dart'; // <-- provider import করো
+import 'package:provider/provider.dart';  // <-- provider import করো
 //import 'package:fooddeliveryapp/models/restaurant.dart'; // <-- তোমার Restaurant provider path
 
 class MySliverAppBar extends StatelessWidget {
   final Widget child;
   final Widget title;
 
-  const MySliverAppBar({super.key, required this.child, required this.title});
+  const MySliverAppBar({
+    super.key,
+    required this.child,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,9 @@ class MySliverAppBar extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const CartPage()),
+                  MaterialPageRoute(
+                    builder: (context) => const CartPage(),
+                  ),
                 );
               },
               icon: const Icon(Icons.shopping_cart),
@@ -63,7 +69,7 @@ class MySliverAppBar extends StatelessWidget {
       ],
       backgroundColor: Theme.of(context).colorScheme.surface,
       foregroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: const Text("YAMMI"),
+      title: const Text("Yammi Food"),
       flexibleSpace: FlexibleSpaceBar(
         background: Padding(
           padding: const EdgeInsets.only(bottom: 50),
